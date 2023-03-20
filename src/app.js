@@ -7,3 +7,20 @@ async function main() {
 }
 
 main();
+
+// schema
+// a mangooose schema define the structure of the documents
+
+// default valure, validation
+
+const playlistSchema = mongoose.Schema({
+  name: String,
+  ctype: String,
+  video: Number,
+  author: String,
+  active: Boolean,
+  date: {
+    type: Date,
+    default: Date.now,
+  },
+});
