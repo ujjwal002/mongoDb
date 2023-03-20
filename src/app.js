@@ -36,4 +36,29 @@ const playlistSchema = mongoose.Schema({
 
 // model ka create karna means collectionn ko create karan hota hai mean you can create tables
 // collection creation
+
+// this is mogoose model is a class throght which we can make many document mean  row in sql
 const Playlist = new mongoose.model("Playlist", playlistSchema);
+
+//  creation of collection name , schema name what poperrty you want
+
+// always singlura           , in your collection
+
+// insert /create
+
+const createDocment = async () => {
+  try {
+    const reactPlaylist = new Playlist({
+      name: "React js",
+      ctype: "Fronted",
+      video: 80,
+      author: "ujjwal kumar",
+      active: true,
+    });
+    const result = await reactPlaylist.save();
+    console.log(result);
+  } catch (error) {
+    console.log(error);
+  }
+};
+createDocment();
