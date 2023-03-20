@@ -48,6 +48,13 @@ const Playlist = new mongoose.model("Playlist", playlistSchema);
 
 const createDocment = async () => {
   try {
+    const javaScriptPlaylist = new Playlist({
+      name: "javacript",
+      ctype: "Fronted",
+      video: 80,
+      author: "ujjwal kumar",
+      active: true,
+    });
     const reactPlaylist = new Playlist({
       name: "React js",
       ctype: "Fronted",
@@ -55,7 +62,27 @@ const createDocment = async () => {
       author: "ujjwal kumar",
       active: true,
     });
-    const result = await reactPlaylist.save();
+    const nodejs = new Playlist({
+      name: "nodejs",
+      ctype: "backened",
+      video: 80,
+      author: "ujjwal kumar",
+      active: true,
+    });
+    const expressjs = new Playlist({
+      name: "expressjs",
+      ctype: "backened",
+      video: 80,
+      author: "ujjwal kumar",
+      active: true,
+    });
+    // const result = await reactPlaylist.save();
+    const result = await Playlist.insertMany([
+      javaScriptPlaylist,
+      reactPlaylist,
+      nodejs,
+      expressjs,
+    ]);
     console.log(result);
   } catch (error) {
     console.log(error);
