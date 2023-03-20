@@ -119,4 +119,13 @@ const updateDocument = async (_id) => {
   console.log(result);
 };
 
-updateDocument("6418b03c2e8a0480cd81d762");
+// updateDocument("6418b03c2e8a0480cd81d762");
+
+// delete
+
+const deleteTheDocumnet = async (_id) => {
+  const result = await Playlist.deleteOne({ _id });
+  console.log(result);
+};
+
+deleteTheDocumnet("6418aaff0fb8f3714d73d081");
