@@ -88,4 +88,12 @@ const createDocment = async () => {
     console.log(error);
   }
 };
-createDocment();
+// createDocment();
+
+// read
+
+const getDocumnet = async () => {
+  const result = await Playlist.find({ ctype: "Fronted" }).select({ name: 1 });
+  console.log(result);
+};
+getDocumnet();
