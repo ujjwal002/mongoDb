@@ -96,4 +96,27 @@ const getDocumnet = async () => {
   const result = await Playlist.find({ ctype: "Fronted" }).select({ name: 1 });
   console.log(result);
 };
-getDocumnet();
+// getDocumnet();
+
+// update
+const updateDocument = async (_id) => {
+  // const result = await Playlist.updateOne(
+  //   { _id },
+  //   {
+  //     $set: {
+  //       name: "Javascript",
+  //     },
+  //   }
+  // );
+  const result = await Playlist.findByIdAndUpdate(
+    { _id },
+    {
+      $set: {
+        name: "JJavascript",
+      },
+    }
+  );
+  console.log(result);
+};
+
+updateDocument("6418b03c2e8a0480cd81d762");
