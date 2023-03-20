@@ -14,7 +14,10 @@ main();
 // default valure, validation
 
 const playlistSchema = mongoose.Schema({
-  name: String,
+  name: {
+    type: String,
+    required: true,
+  },
   ctype: String,
   video: Number,
   author: String,
